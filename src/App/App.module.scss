@@ -1,3 +1,106 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: gray.100;
+  .header{
+    background-image:url("../assets/header.png");
+    height:20rem;
+    background-size: cover;
+    background-position: center;
+    padding:8rem;
+    h2{
+      font-size: 3rem;
+      margin-top: 6rem;
+      text-align: left;
+      color:white
+    }
+  }
+  .upDiv { 
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+    div{
+      display: flex;
+      gap: 20px;
+      span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    }
+  }
+}
+
+.coinSpan{
+  background-color: whitesmoke;
+  border-radius: 18px;
+  padding: 4px;
+  img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.filter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0 6rem;
+  border-bottom: 2px solid whitesmoke;
+}
+
+.arrowButtons{
+  display: flex;
+  gap:1rem;
+  img:hover{
+    cursor: pointer;
+  }
+}
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 6rem;
+  justify-content: center;
+  gap:2rem;
+  background-color: transparent;
+}
+
+.product{
+  margin: 1rem 0.5rem;
+  text-align: left;
+  padding: 0.2rem;
+  position: relative;
+  p{
+    margin: 0 1rem;
+    color:gainsboro;
+    font-size: 14px;
+    border-top: 1px solid gainsboro;
+  }
+  span{
+    color:gray;
+    font-size: 18px;
+    padding: 0 1rem;
+  }
+
+  .soso{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+  }
+  
+}
+.buttomButtons{
+  &:hover{
+    cursor: pointer;
+  }
+}
+
 @keyframes fly {
   0% {
     transform: translateY(0) rotateX(0);
@@ -5,29 +108,5 @@
 
   100% {
     transform: translateY(-40px) rotate3d(3, 2, 1, 30deg);
-  }
-}
-
-.container {
-  width: 100%;
-  max-width: 480px;
-
-  .header {
-    h1 {
-      font-weight: 800;
-      font-size: 2rem;
-      margin: 0;
-      margin-bottom: 6px;
-
-      img {
-        animation: fly 3s infinite alternate ease-in-out;
-      }
-    }
-
-    h3 {
-      font-weight: 300;
-      font-size: 1.25rem;
-      margin: 0;
-    }
   }
 }
