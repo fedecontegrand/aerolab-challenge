@@ -40,9 +40,8 @@ export default function Card({product, isSelected}: Props) {
               top: "10px",
               right: "10px",
             }}
-          />
-        ) : null}
-        <img alt="prodimg" src={product.img.url} />
+          /> ) : null}
+        <img alt="prodimg" src={product.img.url}/>
         <Text marginLeft="1rem">{product.category}</Text>
         <span>{product.name}</span>
       </Box>
