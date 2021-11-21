@@ -83,6 +83,7 @@ export default function Card({product, isSelected}: Props) {
                 </Heading>
               ) : (
                 <Text
+                  
                   color="red.900"
                   fontSize="xl"
                   fontWeight="bold"
@@ -90,6 +91,7 @@ export default function Card({product, isSelected}: Props) {
                 >{`Missing ${product.cost - points}`}</Text>
               )}
               <Image
+                marginTop="7px"
                 alignItems="center"
                 alt="coin"
                 display="flex"
