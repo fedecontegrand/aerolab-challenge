@@ -1,6 +1,7 @@
 import React, {VoidFunctionComponent} from "react";
 import {Box, Stack, StackDivider, StackItem, Text} from "@chakra-ui/layout";
 import {Button, ButtonGroup} from "@chakra-ui/button";
+import {Image} from "@chakra-ui/image";
 
 import styles from "../App/App.module.scss";
 import logo from "../assets/logo.svg";
@@ -27,9 +28,9 @@ export default function Navbar({setPage}: Props) {
         <div>
           <span>{user?.name}</span>
           <span className={styles.coinSpan}>
-            <img alt="coin" src={coin} /> {user?.points}
-            <Button onClick={() => addPoints(1000)}>Agrega 1000</Button>
+            <Image alt="coin" src={coin} /> {user?.points}
           </span>
+          <Button onClick={() => addPoints(1000)}>Agrega 1000</Button>
         </div>
       </div>
       <div className={styles.header}>

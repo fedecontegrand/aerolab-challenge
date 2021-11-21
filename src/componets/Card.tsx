@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
-import {Box, Text} from "@chakra-ui/layout";
+import {Box, Heading, Text} from "@chakra-ui/layout";
 import {Button} from "@chakra-ui/button";
+import {Image} from "@chakra-ui/image";
 
 import buyBag from "../assets/icons/buy-blue.svg";
 import coin from "../assets/icons/coin.svg";
@@ -25,7 +26,7 @@ export default function Card({product, isSelected}: Props) {
       key={product._id}
       boxShadow="xl"
       className={styles.product}
-      cursor={canBuy ? "pointer" : "not-allowed"}
+      cursor="pointer"
       dropShadow="xl"
       position="relative"
     >
@@ -42,13 +43,13 @@ export default function Card({product, isSelected}: Props) {
           />
         ) : null}
         <img alt="prodimg" src={product.img.url} />
-        <p>{product.category}</p>
+        <Text marginLeft="1rem">{product.category}</Text>
         <span>{product.name}</span>
       </Box>
       {isSelected && (
         <>
           <Box
-            backgroundColor={"blue.200"}
+            backgroundColor="blue.500"
             height={"100%"}
             left={0}
             opacity="0.7"
@@ -64,7 +65,7 @@ export default function Card({product, isSelected}: Props) {
             className={styles.soso}
             display="flex"
             flexDirection="column"
-            justifyContent="space-around"
+            justifyContent="center"
             zIndex={3}
           >
             <img
@@ -76,14 +77,33 @@ export default function Card({product, isSelected}: Props) {
                 right: "10px",
               }}
             />
-            <Text>
-              {product.cost}
-              <img alt="coin" src={coin} />
-            </Text>
-
+            <Box alignItems="center" display="flex" justifyContent="center">
+              {canBuy ? (
+                <Heading color="white" fontWeight="semibold" marginRight="0.5rem">
+                  {product.cost}
+                </Heading>
+              ) : (
+                <Text
+                  color="red.900"
+                  fontSize="xl"
+                  fontWeight="bold"
+                  marginRight="0.5rem"
+                >{`Missing ${product.cost - points}`}</Text>
+              )}
+              <Image
+                alignItems="center"
+                alt="coin"
+                display="flex"
+                justifyContent="center"
+                src={coin}
+              />
+            </Box>
             <Button
-              backgroundColor="orangered"
-              disabled={!canBuy}
+              backgroundColor="white"
+              borderRadius="3xl"
+              cursor={canBuy ? "pointer" : "not-allowed"}
+              marginTop="0.5rem"
+              width="12rem"
               onClick={() => addProduct(product._id)}
             >
               Redeem now
